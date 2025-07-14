@@ -10,8 +10,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f0f6ff;
-      color: #333;
+      background-color: #0a0d2e;
+      color: #fff;
     }
 
     /* Header */
@@ -19,8 +19,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: linear-gradient(90deg, #2196F3, #21CBF3);
-      padding: 15px 30px;
+      background-color: #02b8f0;
+      padding: 20px 30px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -32,97 +32,128 @@
     }
 
     header .logo img {
-      height: 40px;
-      width: 40px;
+      height: 50px;
+      width: 50px;
       margin-right: 10px;
       border-radius: 50%;
     }
 
     header h1 {
-      color: white;
+      color: #fff;
       margin: 0;
-      font-size: 1.8em;
+      font-size: 2em;
+      font-weight: bold;
     }
 
-    /* Sections */
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 60px auto;
       padding: 30px;
-      background-color: white;
+      background-color: #0d1140;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
     }
 
     section h2 {
-      color: #2196F3;
-      border-bottom: 2px solid #2196F3;
+      color: #02b8f0;
+      font-size: 2em;
+      border-bottom: 2px solid #02b8f0;
+      display: inline-block;
       padding-bottom: 5px;
+      margin-bottom: 20px;
     }
 
     section p {
       line-height: 1.6;
+      font-size: 1.1em;
+      max-width: 800px;
+      margin: 20px auto;
     }
 
-    /* My App Section */
+    .big-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 40px;
+      background-color: #02b8f0;
+      color: #fff;
+      font-size: 1.5em;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      border: 3px solid #000;
+      transition: background-color 0.3s;
+    }
+
+    .big-btn:hover {
+      background-color: #0291c7;
+    }
+
     .app-section {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 20px;
-      margin-top: 20px;
+      justify-content: center;
+      gap: 30px;
+      text-align: left;
     }
 
     .app-section img {
       max-width: 300px;
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
     .app-info {
       flex: 1;
       min-width: 250px;
+      max-width: 500px;
+    }
+
+    .app-info h3 {
+      color: #fff;
+      margin-top: 0;
+    }
+
+    .app-info p {
+      color: #ddd;
     }
 
     .download-btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #2196F3;
-      color: white;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #02b8f0;
+      color: #fff;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      font-size: 1.2em;
       transition: background-color 0.3s;
     }
 
     .download-btn:hover {
-      background-color: #1976D2;
+      background-color: #0291c7;
     }
 
-    .scroll-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #2196F3;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .scroll-btn:hover {
-      background-color: #1976D2;
+    .contact-info {
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .contact-info p {
-      margin: 10px 0;
+      margin: 15px 0;
+      font-size: 1.2em;
+    }
+
+    .contact-info span {
+      font-weight: bold;
     }
 
     .contact-info a {
-      color: #2196F3;
+      color: #02b8f0;
       text-decoration: none;
-      font-weight: bold;
     }
 
     .contact-info a:hover {
@@ -131,23 +162,25 @@
 
     footer {
       text-align: center;
-      padding: 15px;
-      color: #666;
+      padding: 20px;
+      color: #aaa;
       font-size: 0.9em;
     }
 
     @media (max-width: 700px) {
-      .app-section {
-        flex-direction: column;
-      }
-
       header {
         flex-direction: column;
         text-align: center;
       }
-
       header .logo {
         justify-content: center;
+      }
+      .app-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact-info {
+        text-align: center;
       }
     }
   </style>
@@ -166,31 +199,36 @@
   <section id="intro">
     <h2>Welcome to Jai Developers 🌟</h2>
     <p>
-      Hi! I'm Jai, an Android App Developer specializing in MIT App Inventor. I help businesses and individuals bring their app ideas to life with simple, user-friendly Android apps. 
+      Hi! I'm Jai, an Android App Developer specializing in MIT App Inventor.
+      I help businesses and individuals bring their app ideas to life with simple, user-friendly Android apps.
       My goal is to deliver reliable, intuitive, and easy-to-use solutions for everyone.
     </p>
-    <a class="scroll-btn" href="#myapp">👇 View My App</a>
+    <a class="big-btn" href="#myapp">👇 View my app</a>
   </section>
 
   <!-- My App Section -->
   <section id="myapp">
-    <h2>My App: Auto Home</h2>
+    <h2>My app : Auto Home</h2>
     <div class="app-section">
       <img src="app_screenshot.png" alt="App Screenshot" />
       <div class="app-info">
-        <p><strong>Description:</strong> A simple, useful Android app built with MIT App Inventor for controlling ESP32-based home automation. Clean design, easy to use, and reliable performance to help automate your home with a single tap.</p>
-        <a class="download-btn" href="https://drive.google.com/file/d/1m75wUwyOF1Rta3wElsPJOCqDa1pkZ349/view?usp=drive_link" target="_blank">📥 Download APK</a>
+        <h3>Description :</h3>
+        <p>
+          A simple, useful Android app built with MIT App Inventor for controlling ESP32-based home automation.
+          Clean design, easy to use, and reliable performance to help automate your home with a single tap.
+        </p>
+        <a class="download-btn" href="https://drive.google.com/file/d/1m75wUwyOF1Rta3wElsPJOCqDa1pkZ349/view?usp=drive_link" target="_blank">📥 Download app</a>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact Me</h2>
+    <h2>If you want to make an app Then</h2>
     <div class="contact-info">
-      <p>Email: <a href="mailto:1451jai@gmail.com">1451jai@gmail.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/919416383219">+91-9416383219</a></p>
-      <p>Instagram: 📸 <a href="https://instagram.com/your_username" target="_blank">@your_username</a></p>
+      <p>📧 <span>Email :</span> <a href="mailto:1451jai@gmail.com">1451jai@gmail.com</a></p>
+      <p>💚 <span>Whatsapp :</span> <a href="https://wa.me/919416383219">+91-9416383219</a></p>
+      <p>📸 <span>Instagram :</span> <a href="https://instagram.com/jaishree_suthar45" target="_blank">@jaishree_suthar45</a></p>
     </div>
   </section>
 
