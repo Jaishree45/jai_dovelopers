@@ -1,8 +1,8 @@
-name: Daily README Update
+name: Update README daily
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # runs every day
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
@@ -10,22 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install Codex CLI
-        run: npm install -g @openai/codex-cli
-
-      - name: Run Codex to update README
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      - name: Update README
         run: |
-          codex --full-auto "Update README.md by replacing the line starting with 'Last Update:' with today's date."
+          echo "# My Automated README" > README.md
+          echo "" >> README.md
+          echo "Last Update: $(date)" >> README.md
 
       - name: Commit changes
         run: |
-          git config user.name "codex-bot"
-          git config user.email "[email protected]"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
           git add README.md
-          git diff --staged --quiet || git commit -m "Daily README update"
+          git commit -m "Daily README update" || echo "No changes"
           git push
